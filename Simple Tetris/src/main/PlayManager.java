@@ -43,7 +43,7 @@ public class PlayManager implements ImageObserver {
     public static ArrayList<Block> staticBlocks = new ArrayList<>();
 
     // Others
-    public static int dropInterval = 60; // mino drops in every 60 frames
+    public static int dropInterval ; // mino drops in every 60 frames
     boolean gameOver;
 
     // Effect
@@ -177,7 +177,7 @@ public class PlayManager implements ImageObserver {
             x += Block.SIZE;
 
             if (x == right_x) {
-                if (blockCount == 12) {
+                if (blockCount == 12) { //ครบ 12 บล็อกใน 1 แถว ลบ
                     effectCounterOn = true;
                     effectY.add(y);
 
@@ -191,9 +191,9 @@ public class PlayManager implements ImageObserver {
                     lines++;
 
                     // Drop speed
-                    if (lines % 5 == 0 && dropInterval > 1) {
+                    if (lines % 5 == 0 && dropInterval > 1) { // ต่ำกว่า 1 จะไม่ลบความเร็ว
                         level++;
-                        if (dropInterval > 12) {
+                        if (dropInterval > 12) { // เริ่มนับที่ 60 ลดทีละ 12 >48>36>24>12 พอเหลือ 12 จะลดทีละ 3
                             dropInterval -= 12;
                             img_select += 1 ;
                         } else {
