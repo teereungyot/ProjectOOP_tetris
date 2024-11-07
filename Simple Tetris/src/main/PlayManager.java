@@ -370,9 +370,4 @@ public class PlayManager implements ImageObserver {
         GamePanel.music.play(0,true);    
         GamePanel.music.loop();
     }
-
-    @Override
-    public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 }
